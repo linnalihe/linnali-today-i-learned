@@ -1,6 +1,7 @@
 ---
-title: Welcome to Quartz
+title: Linna Li
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+Welcome to my side of the internet 🌱
+
+
