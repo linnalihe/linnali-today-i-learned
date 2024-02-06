@@ -1,11 +1,11 @@
 ---
-title: <% tp.file.rename("TIL " + tp.date.now()) %>
+title: TIL-<% tp.date.now() %>
 draft: false
 date: <% tp.file.creation_date() %>
 tags:
   - uncategorized
 ---
-<% tp.file.rename("TIL " + tp.date.now()) %>
+<% tp.file.rename("TIL-" + tp.date.now()) %>
 
 Add pre-defined tags to front matter. At at least 1 and at most 3 tags.
 - swe-interview-prep
