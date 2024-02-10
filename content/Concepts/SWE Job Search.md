@@ -1,7 +1,7 @@
 ---
 date: 2024-02-07 10:49
 tags:
-  - uncategorized
+  - swe-job-search
 ---
 
 There are 3 main components to interviewing for a software engineer position

@@ -1,7 +1,7 @@
 ---
 date: 2024-02-07 10:49
 tags:
-  - uncategorized
+  - zettelkasten
 ---
 
 Notes that are brief and connected to other notes
