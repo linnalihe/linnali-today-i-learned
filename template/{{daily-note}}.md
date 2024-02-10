@@ -2,7 +2,7 @@
 draft: false
 date: <% tp.file.creation_date() %>
 tags:
-  - uncategorized
+  - productivity
 ---
 <% tp.file.rename("TIL-" + tp.date.now()) %>
 
