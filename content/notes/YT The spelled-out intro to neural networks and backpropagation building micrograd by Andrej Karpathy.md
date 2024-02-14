@@ -7,7 +7,6 @@ internal-link: []
 ---
 
 https://karpathy.ai/zero-to-hero.html
-
 https://www.youtube.com/watch?v=VMj-3S1tku0
 
 

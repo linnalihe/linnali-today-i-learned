@@ -8,9 +8,8 @@ internal-links:
 <% tp.file.rename("TIL " + tp.date.now()) %>
 
 Add your content here for the internet to see.
-What did you focus on for the last hour that may bring value to someone else? Or your future self?
-
-![[{{shared-all-tags-and-internal-links}}]]
+What did you focus on for the last hour that may bring value to someone else? 
+Or your future self?
 
 
 
