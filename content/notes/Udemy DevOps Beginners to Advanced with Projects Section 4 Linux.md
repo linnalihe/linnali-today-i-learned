@@ -124,7 +124,7 @@ can use `vim` to find and replace by opening up the file in vim and then
 `sed 's/text-to-replace/replace-with-this-text/g' *` to do this on the terminal via bash. will print it on the screen without actually doing it yet
 add `-i` to execute `sed -i 's/text-to-replace/replace-with-this-text/g' *`
 
-29 Redirection
+##### 29 Redirection
 Default for commands print it to the screen but we can add it to another file using redirection
 `uptime > /tmp/sandbox-bash.txt` will create file if it doesn't exist and will overwrite if the file does exist. Use double arrows to append
 `uptime >> /tmp/sandbox-bash.txt`
@@ -150,7 +150,7 @@ Find the file itself rather than finding whats within files
 `updatedb`
 `locate host` is not a real time search, searches in the database that was created from `updatedb`
 
-30 Users and Groups
+##### 30 Users and Groups
 
 Used to control access to files
 Each user will have a username `uid` stored in `/etc/passwd`
@@ -190,7 +190,7 @@ or just open file and edit with `vim /etc/group`
 `userdel -r testuser` to delete user and home directory
 `groupdel devops` to delete group
 
-31 File Permission
+##### 31 File Permission
 Each file has an owner and permissions
 `ls -l | head -1`
 `-rw-r--r-- 1 root root       3028 Aug 24  2021 adduser.conf`
@@ -216,7 +216,7 @@ also have number for permissions
 - so 7 means this user has all permissions
 - `chmod 640 myfile` means read and write for user, read for group and none for other
 
-32 Sudo
+##### 32 Sudo
 `sudo -i` to switch to root user
 `su - vagrant` to switch from root to vagrant
 add sudo command to as user
@@ -231,3 +231,80 @@ instead, we can edit the sudoer.d/ directory. There is a file for each user
 group name has be to `%testgroup` because it's a group name
 
 
+##### 33 Package Management
+Use `yum` to install and manage packages or softwares
+This takes the place of `curl link-of-package-to-install -o name-of-package.extention`
+![[Pasted image 20240221092248.png]]
+
+package managers will install the dependencies
+when you directly install with curl, you have to go and find the dependencies and install all of them
+package manager like `yum` maintains a repository of packages. If you want to install something that is not found, search on the internet to find instructions on adding it to the repository
+Example of including `jenkins`
+![[Pasted image 20240221092737.png]]
+
+##### 34 Services
+`yum install httpd -y`
+
+`systemctl status httpd`
+
+`systemctl start httpd`
+
+`systemctl restart httpd`
+
+`systemctl reload httpd`
+
+`systemctl enable httpd` this will start the service at boot
+
+When installing via `yum` we get a systemctl file. If we install via a zip file we won't get this and will have to create it ourselves
+
+##### 35 Processes
+`ps aux` shows all the processes with utilization
+`ps -ef`
+
+`ps -ef | grep httpd | grep -v 'grep` to see all processes with `httpd` and exclude `grep`
+
+`kill pid` to nicely ask for the process to stop, it will stop the child processes and then itself
+`kill -9 pid` forcefully stops the process. may result in orphan processes
+
+Example of killing orphan processes
+`ps -ef | grep httpd | grep -v 'grep | awk ' {print $2}' | xargs kill -9`
+
+##### 36 Archiving
+
+`tar -czvf name_of_file_to_make.tar.gz /directory-to-archive`
+
+`c` is to create
+
+`z` is to compress
+
+`v` is for verbose
+
+`f` is for file
+
+`tar -xzvf file_to_make.tar.gz -C /opt/` extract into the `opt` directory
+
+`tar` is a legacy command and has a lot of features
+
+Easier to use the `zip` command
+
+`yum install zip unzip -y`
+
+`zip -r directory-you-want-to-archive`
+
+##### 37 Ubuntu commands
+Similar to centOS commands
+
+`adduser` instead of `useradd`
+
+`visudo` opens in `nano` instead of `vim`
+`export EDITOR=vim` to change it to open in `vim`
+
+`dpkg -l | grep package-name` to search for the name of the dpkg package
+
+`apt search package-name`
+
+`apt install package-name`
+
+`apt upgrade` to upgrade all packages
+
+`apt update` is going to update list of packages

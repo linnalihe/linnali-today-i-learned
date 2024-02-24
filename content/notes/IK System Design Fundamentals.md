@@ -223,11 +223,11 @@ commodity machine will have 128GB ram
 We need 4 TB and if each machine has 128 GB, we need about 30 partiitions or 40 partitions
 So we need 30x3 machines in the cache layer
 
-##### 13 URL shortner sclaing for throughput
+##### 13 URL shortner scaling for throughput
 Do we need to scale for throughput?
 
 We have look at and consider at any tier (app, cache, db) how many requests it can process per second
-let x be the time in mx needed to process a given request, by a single thread. Then the number of requests would be 1000/x
+let x be the time in ms needed to process a given request, by a single thread. Then the number of requests would be 1000/x
 
 Assuming 8-12 cores, 8 threads per core, 100 such treads per machine
 That means (100x1000)/x requests/sec at 100% CPU utilization
@@ -269,7 +269,7 @@ SLA is Service Level Agreement
 - Usually part of B2B service contracts
 
 ##### 16 Latency, Response time and Bandwidth
-Lteency is duration that a request is "latent" or awaiting service not being actually served
+Latency is duration that a request is "latent" or awaiting service not being actually served
 Response time is latency (2 way round trip time RTT) + service time at server
 latency is measure of network performance or delay
 

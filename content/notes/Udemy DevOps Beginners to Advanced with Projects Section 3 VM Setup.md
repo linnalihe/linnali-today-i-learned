@@ -5,6 +5,7 @@ tags:
   - terminal
 internal-links:
 ---
+NOTE: Use Windows as host machine to follow along. Do not use MacOS M1
 
 Setting up Linux VMs
 Centos VM and Ubuntu VM
